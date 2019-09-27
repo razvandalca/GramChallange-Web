@@ -1,18 +1,20 @@
-name: UnitTests Check 
+name: UnitTests Check
 
 on:
   pull_request:
     branches:
-    - develop
-  resolves = ["Test"]
-        
-action "Build" {
-  uses = "{owner}/{repo}@ref"
-  args = "pip install -r requirements.txt"
-}
+      - develop
+jobs:
+  build:
 
-action "Test" {
-  uses = "{owner}/{repo}@ref"
-  args = "pytest"
-  needs = ["Build"]
-}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Test with pytest
+        run: |
+          pip install pytest
+          pytest
