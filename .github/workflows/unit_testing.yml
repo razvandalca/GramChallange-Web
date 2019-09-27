@@ -1,0 +1,18 @@
+name: UnitTests Check 
+
+on:
+  pull_request:
+    branches:
+    - develop
+  resolves = ["Test"]
+        
+action "Build" {
+  uses = "{owner}/{repo}@ref"
+  args = "pip install -r requirements.txt"
+}
+
+action "Test" {
+  uses = "{owner}/{repo}@ref"
+  args = "pytest"
+  needs = ["Build"]
+}
