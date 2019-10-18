@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/GramChallange.iml" filepath="$PROJECT_DIR$/.idea/GramChallange.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../GramChallenge/.idea/GramChallenge.iml" filepath="$PROJECT_DIR$/../GramChallenge/.idea/GramChallenge.iml" />
     </modules>
   </component>
 </project>
